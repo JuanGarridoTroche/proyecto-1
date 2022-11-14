@@ -1,32 +1,25 @@
 "use strict";
 
-// const emojis = ["😊", "❤️", "👌", "🥶", "☠️", "👾", "🐸", "🦀"];
-const emojis = [0, 1, 2, 3];
-const numeros = [0, 0, 1, 1, 2, 2, 3, 3];
+const numeros = ["😊", "😊", "❤️", "❤️", "👌", "👌", "🥶", "🥶", "☠️", "☠️", "👾", "👾", "🐸", "🐸", "🦀", "🦀"];
+// const shuffledArray = numeros.sort((a, b) => a > b ? 1: -1);
 
 // Returns a random number between min (inclusive) and max (inclusive)
 function getRandom(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-const arrayEmojis = [];
-let pos = 0;
-function crearArray() {
-  do {
-    const posicion = getRandom(0, numeros.length - 1);
-    console.log(arrayEmojis);
-    if (posicion > 3) {
-      pos = posicion - 3;
-      arrayEmojis.push(emojis[pos]);
-    } else {
-      arrayEmojis.push(emojis[posicion]);
-    }
-    console.log(numeros);
-    numeros.splice(numeros[posicion], 1);
-    console.log(numeros);
-    console.log(numeros[posicion]);
-  } while (numeros.length !== 0);
+function barajar() {
+  return numeros.sort(() => 0.5 - Math.random()); 
 }
-crearArray();
 
-console.log(arrayEmojis);
+
+console.log(barajar());
+function bloquearCartas() {
+  for( let i = 0; i <= 15; i++) {
+    let cartaBloqueada = document.getElementById(i); 
+    cartaBloqueada.innerHTML = numeros[i];
+    cartaBloqueada.disabled = true;
+  }
+
+}
+

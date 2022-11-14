@@ -1,17 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap');
+
+:root {
+  --interrogante: 'Merriweather', serif;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 html {
   font-size: 62.5%;
 }
-
 body {
   font-size: 1.6rem;
+  background-color: rgba(29, 167, 185, 0.178);
 }
-
 body > header {
   display: flex;
   justify-content: space-around;
@@ -19,23 +23,45 @@ body > header {
   background-color: lightskyblue;
   height: 50px;
 }
-
+body > header > h1 {
+  color: rgb(6, 83, 226);
+  text-align: center;
+}
 body > header > nav > ul {
   list-style: none;
   display: flex;
 }
-
 body > header > nav > ul > li {
   padding: 0 10px;
 }
-
 body > header > nav > ul > li > a {
   text-decoration: none;
   color: white;
 }
-
 main {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.section-1 > table  tr > td > button {
+  width: 100px;
+  height: 100px;
+  margin: 2px;
+  font-size: 6rem;
+  font-family: var(--interrogante);
+  font-weight: 900;
+  border-radius: 10px;
+  color: darkgray;
+  /* box-shadow: 3px 5px 26px 10px rgba(0,0,0,0.65); */
+  /* background: linear-gradient(90deg, rgba(238,174,202,1) 27%, rgba(70,113,163,1) 66%); */
+  /* linear-gradient(to right, rgb(55, 65, 81), rgb(17, 24, 39), rgb(0, 0, 0));   */
+  
+  /* (to right, rgb(55, 65, 81), rgb(17, 24, 39), rgb(0, 0, 0)); */
+  
+}
+
+.section-1 > table  tr > td > button:hover {
+  background-color: rgb(174, 171, 171);
+  color: black;
 }
