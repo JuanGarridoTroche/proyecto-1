@@ -13,7 +13,6 @@ let scoreCounter = 0;
 let totalTime = 0;
 let timeInterval = null;
 
-
 const fragment = document.createDocumentFragment();
 
 startBtn.addEventListener("click", () => {
