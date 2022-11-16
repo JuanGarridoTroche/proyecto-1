@@ -31,11 +31,11 @@
   opacity: .7;
 }
 
-.header-container > h1 {
+.header-container>h1 {
   text-align: center;
   font-size: .5rem;
   text-transform: uppercase;
-  padding: 0  0 5px 0;
+  padding: 0 0 5px 0;
 }
 
 .header-container>.navbar>ul {
@@ -115,6 +115,12 @@ section {
   color: var(--color-yellow);
 }
 
+.score-board__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .board {
   display: grid;
   grid-template-columns: repeat(4, auto);
@@ -129,7 +135,7 @@ section {
 }
 
 .card {
-  position: relative;  
+  position: relative;
   cursor: pointer;
   width: auto;
   height: 80px;
@@ -201,10 +207,10 @@ section {
 .finish-display p {
   text-align: center;
   font-size: 5rem;
-  padding-bottom: 20px;
+  padding-bottom: 50px;
 }
 
- /* h2: has terminado el juego */
+/* h2: has terminado el juego */
 .finish-display h2 {
   color: #FEDB39;
   font-size: 1.5rem;
@@ -214,12 +220,14 @@ section {
 .finish-display.hide {
   display: none;
 }
+
 /* =============== MAIN - End =============== */
 
 
 /* =============== Animación cartas - Start =============== */
 /* Si aciertas, parpadea la carta 2 veces */
 @keyframes blink-1 {
+
   0%,
   50%,
   100% {
@@ -275,7 +283,9 @@ section {
     transform: scale(1);
     animation-timing-function: ease-out;
   }
-}/* =============== Animación cartas - End =============== */
+}
+
+/* =============== Animación cartas - End =============== */
 
 
 /* =============== Responsive Desktop - Start =============== */
@@ -287,7 +297,7 @@ section {
     align-items: center;
   }
 
-  .header-container>.navbar>ul li> a {
+  .header-container>.navbar>ul li>a {
     padding: 15px;
     margin: 0;
     color: var(--color-yellow);
@@ -296,6 +306,7 @@ section {
     background-color: transparent;
     border-radius: unset;
   }
+
   .header-container>.navbar>ul li>a:hover {
     background-color: unset;
     color: var(--color-navy);
@@ -335,7 +346,7 @@ section {
   }
 
   .card {
-    position: relative;  
+    position: relative;
     cursor: pointer;
     min-height: 110px;
     min-width: 110px;
@@ -374,4 +385,5 @@ section {
   }
 
 }
+
 /* =============== Responsive Desktop - End =============== */
