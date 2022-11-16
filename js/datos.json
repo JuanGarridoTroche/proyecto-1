@@ -1,0 +1,11 @@
+{
+  "cadena": "Juan",
+  "numero": 35,
+  "boolean": true,
+  "arreglo": ["item 1", 25, "contenido 1", "item 4"], 
+  "objeto": {
+    "dato": "dato 1", 
+    "contacto": "micuenta@micuenta.com"
+  },
+  "nulo": null
+}

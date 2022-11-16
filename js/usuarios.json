@@ -1,0 +1,22 @@
+[
+  {
+    "usuario": "user 1",
+    "intentos": 23,
+    "tiempo": 124
+  },
+  {
+    "usuario": "user 1",
+    "intentos": 13,
+    "tiempo": 64
+  },
+  {
+    "usuario": "user 2",
+    "intentos": 16,
+    "tiempo": 104
+  },
+  {
+    "usuario": "user 3",
+    "intentos": 30,
+    "tiempo": 219
+  }
+]
