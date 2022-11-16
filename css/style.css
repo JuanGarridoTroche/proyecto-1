@@ -98,7 +98,7 @@ section {
   border: 0;
   cursor: pointer;
   font-family: var(--font-p2p);
-  font-size: .4rem;
+  font-size: .6rem;
   transition: 0.3s all;
 }
 
@@ -218,8 +218,8 @@ section {
 
 
 /* =============== Animación cartas - Start =============== */
+/* Si aciertas, parpadea la carta 2 veces */
 @keyframes blink-1 {
-
   0%,
   50%,
   100% {
@@ -232,62 +232,47 @@ section {
   }
 }
 
+/* Al pulsar el botón "comenzar" le damos una animación cuando crea el tablero con las cartas */
 @keyframes bounce-in-fwd {
   0% {
-    -webkit-transform: scale(0);
     transform: scale(0);
-    -webkit-animation-timing-function: ease-in;
     animation-timing-function: ease-in;
     opacity: 0;
   }
 
   38% {
-    -webkit-transform: scale(1);
     transform: scale(1);
-    -webkit-animation-timing-function: ease-out;
     animation-timing-function: ease-out;
     opacity: 1;
   }
 
   55% {
-    -webkit-transform: scale(0.7);
     transform: scale(0.7);
-    -webkit-animation-timing-function: ease-in;
     animation-timing-function: ease-in;
   }
 
   72% {
-    -webkit-transform: scale(1);
     transform: scale(1);
-    -webkit-animation-timing-function: ease-out;
     animation-timing-function: ease-out;
   }
 
   81% {
-    -webkit-transform: scale(0.84);
     transform: scale(0.84);
-    -webkit-animation-timing-function: ease-in;
     animation-timing-function: ease-in;
   }
 
   89% {
-    -webkit-transform: scale(1);
     transform: scale(1);
-    -webkit-animation-timing-function: ease-out;
     animation-timing-function: ease-out;
   }
 
   95% {
-    -webkit-transform: scale(0.95);
     transform: scale(0.95);
-    -webkit-animation-timing-function: ease-in;
     animation-timing-function: ease-in;
   }
 
   100% {
-    -webkit-transform: scale(1);
     transform: scale(1);
-    -webkit-animation-timing-function: ease-out;
     animation-timing-function: ease-out;
   }
 }/* =============== Animación cartas - End =============== */
@@ -375,7 +360,7 @@ section {
     display: grid;
     grid-template-columns: repeat(4, auto);
     gap: .3rem;
-    padding: .3rem;
+    padding: 1rem;
     border: 2px solid #eee;
     border-radius: 5px;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
