@@ -111,7 +111,7 @@ function saveScore() {
   const newUser = { name: user, score: scoreCounter, time: totalTime };
   console.log(scoreBoard[scoreBoard.length-1].score);
   console.log(scoreBoard);
-  if(scoreBoard.length >= 5 && scoreCounter < scoreBoard[scoreBoard.length-1].score) {    
+  if(scoreBoard.length >= 5 && scoreCounter > scoreBoard[scoreBoard.length-1].score) {    
     scoreBoard.pop();
     scoreBoard.push(newUser);
     window.localStorage.setItem("scoreBoard", JSON.stringify(scoreBoard));

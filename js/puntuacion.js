@@ -11,7 +11,7 @@ localStorage.setItem("scoreboard", JSON.stringify(scoreBoard));
 let scoreBoardLS = JSON.parse(localStorage.getItem("scoreboard"));
 
 //Mostramos los usuarios ordenados por intentos:
-scoreBoardLS.sort((a, b) => {
+const ordenado = scoreBoardLS.sort((a, b) => {
     return a.score - b.score;
 });
 for(let i = 0; i < scoreBoardLS.length; i++){
