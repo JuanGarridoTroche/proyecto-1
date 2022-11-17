@@ -9,7 +9,7 @@ const scoreItem = document.querySelector(".score-board__item-score");
 const timer = document.querySelector(".score-board__item-time");
 const finishDisplay = document.querySelector(".finish-display");
 const alta = document.querySelector("#alta");
-// console.log(alta);
+
 
 const flippedCards = [];
 let scoreCounter = 0;
@@ -24,7 +24,6 @@ alta.addEventListener("click", () => {
 });
 
 startBtn.addEventListener("click", () => {
-  // console.log("click");
   if (user === "Date de alta") {
     checkUser();
   }
@@ -110,11 +109,11 @@ function finishGame() {
 function saveScore() {
   const newUser = { name: user, score: scoreCounter, time: totalTime };
   scoreBoard.push(newUser);
-  const scoreBoardsorted = sortScore();
-  console.log("ScoreBoarSorted: ", scoreBoardsorted);
-  console.log("ScoreBoarSorted, intentos del último objeto del array: ",scoreBoardsorted[scoreBoardsorted.length-1].score);
-  console.log("longitud del scoreBoard: ", scoreBoardsorted.length);
-  if(scoreBoardsorted.length > 5) {    
+  const scoreBoardSorted = sortScore();
+  console.log("scoreBoardSorted: ", scoreBoardSorted);
+  console.log("scoreBoardSorted, intentos del último objeto del array: ",scoreBoardSorted[scoreBoardSorted.length-1].score);
+  console.log("longitud del scoreBoard: ", scoreBoardSorted.length);
+  if(scoreBoardSorted.length > 5) {    
       console.log("entró");    
       scoreBoard.pop();
       window.localStorage.setItem("scoreBoard", JSON.stringify(scoreBoard));    
@@ -127,8 +126,10 @@ function saveScore() {
 
 function sortScore() {
   scoreBoard.sort((a, b) => {
-    return a.score - b.score;
-  });
+    // return a.score - b.score;
+    return a.score > b.score ? 1 : -1;
+  });  
+  console.log("ScoreBoard salido de la función sortScore()", scoreBoard);
   return scoreBoard;
 }
 

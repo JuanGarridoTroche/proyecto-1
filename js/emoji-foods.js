@@ -101,7 +101,7 @@ export const emojiFoods = [
   },
   {
     id: '01A',
-    emoji: '🥐',
+    emoji: '🥩',
   },
   {
     id: '01B',
