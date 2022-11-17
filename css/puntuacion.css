@@ -1,0 +1,33 @@
+@import url(./style.css);
+
+* {
+  margin: inherit;
+  padding: inherit;
+  box-sizing: inherit;
+}
+
+main > header > h2 {
+  text-align: center;
+  padding: 30px 0;
+  color: var(--color-yellow);
+} 
+
+table {
+  padding:20px;
+  margin: 0 auto;
+}
+
+table tr th {
+  color: var(--color-yellow);
+}
+
+table tr {
+  min-width: 100px;
+  max-width: 500px;
+  text-align: center;
+}
+
+table tr > td {
+  padding: 5px;
+  color: var(--color-navy);
+}

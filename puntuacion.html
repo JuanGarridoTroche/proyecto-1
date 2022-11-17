@@ -5,43 +5,44 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/puntuacion.css"/>
   <title>Memoria visual Project</title>
 </head>
 
 <body>
-  <header>
-    <header class="header-container">
-      <h1>PUNTUACIÓN</h1>
-      <nav class="navbar">
+  <header class="header-container">
+    <h1>Juego de memoria visual</h1>
+    <nav class="navbar">
         <ul>
-          <li><a href="/">Inicio</a></li>
-          <li><a href="puntuacion.html">Puntuación</a></li>
-          <li><a href="usuario.html">Date de alta</a></li>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="puntuacion.html">Puntuación</a></li>
+            <li id="alta"><a>Date de alta</a></li>
         </ul>
-      </nav>
-    </header>
+    </nav>
+  </header>
+  <main>
+    <header>
+      <h2>HIGH SCORES</h2>
+    </header>   
     <main>
-      <header>
-        <h2 class="jugador">RECORD</h2>
-      </header>
-      <section class="section-1">
-        <table>
-          <tr>
-            <th>Usuario</th>
-            <th>Intentos</th>
-            <th>Tiempo</th>
-          </tr>
-          <tr>
-            <td>user 1</td>
-            <td>27</td>
-            <td>230</td>
-          </tr>
-        </table>
-      </section>
-    </main>
-    <script type="module" src="./js/puntuacion.js"></script>
-    <script type="module" src="./js/json-prueba.js"></script>
+      <table class="intentos">
+        <tr>
+          <th>Jugador</th>
+          <th>Intentos</th>
+          <th>Tiempo</th>
+        </tr>
+      </table>
+    </main>   
+    <!-- <section id="IntentosTop5">
+      <p>Usuario Intentos</p>
+      <ol class="listado intentos"></ol>
+    </section>
+    <section id="tiempoTop5">
+      <p>Usuario tiempo</p>
+      <ol class="listado tiempo"></ol>
+    </section> -->
+  </main>
+  <script type="module" src="./js/puntuacion.js"></script>    
 </body>
 
 </html>
