@@ -109,16 +109,27 @@ function finishGame() {
 
 function saveScore() {
   const newUser = { name: user, score: scoreCounter, time: totalTime };
-  console.log(scoreBoard[scoreBoard.length-1].score);
-  console.log(scoreBoard);
-  if(scoreBoard.length >= 5 && scoreCounter > scoreBoard[scoreBoard.length-1].score) {    
+  scoreBoard.push(newUser);
+  const scoreBoardsorted = sortScore();
+  console.log("ScoreBoarSorted: ", scoreBoardsorted);
+  console.log("ScoreBoarSorted, intentos del último objeto del array: ",scoreBoardsorted[scoreBoardsorted.length-1].score);
+  console.log("longitud del scoreBoard: ", scoreBoardsorted.length);
+  if(scoreBoardsorted.length > 5 && scoreCounter < scoreBoardsorted[scoreBoardsorted.length-1].score) { 
+    console.log("entró");    
     scoreBoard.pop();
-    scoreBoard.push(newUser);
     window.localStorage.setItem("scoreBoard", JSON.stringify(scoreBoard));
-  } else {
-    scoreBoard.push(newUser);
+  } else {    
+    console.log("No entró");
     window.localStorage.setItem("scoreBoard", JSON.stringify(scoreBoard));
   }
+}
+
+
+function sortScore() {
+  scoreBoard.sort((a, b) => {
+    return a.score - b.score;
+  });
+  return scoreBoard;
 }
 
 function checkIdentityMatch() {
