@@ -1,90 +1,118 @@
 export const emojiFoods = [
   {
-    id: '69576001-62be-4c03-af82-20bfc8a586a4',
+    id: '001',
     emoji: '🍕',
   },
   {
-    id: '14cbf86a-1646-4302-a72e-375a6eebf8df',
+    id: '002',
     emoji: '🍔',
   },
   {
-    id: '26758f73-aa9f-4090-aeb6-d19578ad452c',
+    id: '003',
     emoji: '🍧',
   },
   {
-    id: '133057fe-b4e0-4c2d-9205-fb340f5ab894',
+    id: '004',
     emoji: '🥝',
   },
   {
-    id: 'd9084e88-9cb0-43ab-ba04-d445049c1d80',
+    id: '005',
     emoji: '🍟',
   },
   {
-    id: 'c70cd67d-91a2-4ed4-9867-d5ccb06333df',
+    id: '006',
     emoji: '🍝',
   },
   {
-    id: 'ada9563c-38c6-4151-b0c9-1a65c192e08a',
+    id: '007',
     emoji: '🍚',
   },
   {
-    id: '2bf14b96-82e4-469a-90ec-22f0d08730da',
+    id: '008',
     emoji: '🍜',
   },
   {
-    id: 'adee3f6f-5475-4573-a78d-70472f151a8d',
+    id: '009',
     emoji: '🍲',
   },
   {
-    id: '68300c8f-c630-44fe-ad3a-86dbad73d622',
+    id: '00A',
     emoji: '🍡',
   },
   {
-    id: '8c935521-85b6-4caf-82cc-322bb9b8f8a6',
+    id: '00B',
     emoji: '🍳',
   },
   {
-    id: '1faef380-1656-4bf1-a8ae-c91408021980',
+    id: '00C',
     emoji: '🍞',
   },
   {
-    id: '6b0e108c-8167-4a4d-b838-2e226532e94f',
+    id: '00D',
     emoji: '🍩',
   },
   {
-    id: 'e7379679-2311-4755-adb8-647e6cc7c8ef',
+    id: '00E',
     emoji: '🍪',
   },
   {
-    id: '9fc03c1f-d016-4eb4-b394-c28cc92a15f5',
+    id: '00F',
     emoji: '🍑',
   },
   {
-    id: '340e866d-b19f-4858-836c-39f9972baa14',
+    id: '010',
     emoji: '🍇',
   },
   {
-    id: 'ada15aca-a8c1-4c17-a2fb-d49426e2b606',
+    id: '011',
     emoji: '🥑',
   },
   {
-    id: 'a3777b3e-0a5a-4262-81a7-5260ed953212',
+    id: '012',
     emoji: '🍍',
   },
   {
-    id: 'cd587e1e-3097-452d-a5d3-944d2e2782c0',
+    id: '013',
     emoji: '🍉',
   },
   {
-    id: 'b91a3576-b96a-4abb-9cf5-668d99fee9d9',
+    id: '014',
     emoji: '🍆',
   },
   {
-    id: 'f2b8be03-7a5c-4f96-832d-6f9686979ac8',
+    id: '015',
     emoji: '🌽',
   },
   {
-    id: '56a3fdaf-9714-42be-a2d0-84b0511728c7',
+    id: '016',
     emoji: '🥥',
+  },
+  {
+    id: '017',
+    emoji: '🥐',
+  },
+  {
+    id: '018',
+    emoji: '🥪',
+  },
+  {
+    id: '019',
+    emoji: '🌭',
+  },
+  {
+    id: '01A',
+    emoji: '🥐',
+  },
+  {
+    id: '01B',
+    emoji: '🥟',
+  },
+  {
+    id: '01C',
+    emoji: '🥒',
+  },
+  {
+    id: '01D',
+    emoji: '🌶️',
   },
 ];
