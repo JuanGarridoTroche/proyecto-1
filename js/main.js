@@ -114,10 +114,10 @@ function saveScore() {
   console.log("ScoreBoarSorted: ", scoreBoardsorted);
   console.log("ScoreBoarSorted, intentos del último objeto del array: ",scoreBoardsorted[scoreBoardsorted.length-1].score);
   console.log("longitud del scoreBoard: ", scoreBoardsorted.length);
-  if(scoreBoardsorted.length > 5 && scoreCounter < scoreBoardsorted[scoreBoardsorted.length-1].score) { 
-    console.log("entró");    
-    scoreBoard.pop();
-    window.localStorage.setItem("scoreBoard", JSON.stringify(scoreBoard));
+  if(scoreBoardsorted.length > 5) {    
+      console.log("entró");    
+      scoreBoard.pop();
+      window.localStorage.setItem("scoreBoard", JSON.stringify(scoreBoard));    
   } else {    
     console.log("No entró");
     window.localStorage.setItem("scoreBoard", JSON.stringify(scoreBoard));
