@@ -7,20 +7,37 @@ const board = document.querySelector(".board");
 const scoreItem = document.querySelector(".score-board__item-score");
 const timer = document.querySelector(".score-board__item-time");
 const finishDisplay = document.querySelector(".finish-display");
+const alta = document.querySelector("#alta");
+// console.log(alta);
 
 const flippedCards = [];
 let scoreCounter = 0;
 let totalTime = 0;
 let timeInterval = null;
+let user = "Date de alta";
+
 
 const fragment = document.createDocumentFragment();
 
+alta.addEventListener("click", () => {
+  checkUser();
+})
+
 startBtn.addEventListener("click", () => {
   // console.log("click");
+  if (user === "Date de alta") {
+    checkUser();
+  }
   resetGame();
   createBoard();
   timeInterval = setInterval(updateTime, 1000);
 });
+
+
+function checkUser() { 
+    user = prompt("Introduce un nombre de usuario: ");
+    alta.innerHTML = `<a>${user}</a>`;  
+}
 
 board.addEventListener("click", flipCard);
 
