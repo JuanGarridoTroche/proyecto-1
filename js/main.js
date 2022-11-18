@@ -25,31 +25,29 @@ const fragment = document.createDocumentFragment();
 
 alta.addEventListener("click", () => {
   overlay.classList.add("active");
-  popup.classList.add("active");
-  // user = document.getElementById("user").value;
-  console.log(user);
+  popup.classList.add("active");  
 });
 
 startBtn.addEventListener("click", () => {
   if (user === "Date de alta") {
-    checkUser();
+    overlay.classList.add("active");
+    popup.classList.add("active");
+    startBtn.textContent = "Start";    
+  } else {
+    resetGame();
+    createBoard();
+    timeInterval = setInterval(updateTime, 1000);
   }
-  resetGame();
-  createBoard();
-  timeInterval = setInterval(updateTime, 1000);
 });
 
 submitDatoUser.addEventListener("click", () => {
   user = recogerDatoUser.value;
-  console.log(user);
   overlay.classList.remove("active");
   popup.classList.remove("active");
   checkUser();
 });
 
 function checkUser() {
-  // user = prompt("Introduce un nombre de usuario: ");
-  console.log(user);
   alta.innerHTML = `<a>${user}</a>`;
 }
 
@@ -58,18 +56,10 @@ btnClosePopup.addEventListener("click", () => {
   popup.classList.remove("active");
 });
 
-function probando() {
-  console.log(user);
-  overlay.classList.remove("active");
-  popup.classList.remove("active");
-};
-
 board.addEventListener("click", flipCard);
 
 function userName() {
-  // user = "Date de alta";
   user = document.getElementById("user").value;
-  console.log(user);
 }
 
 function resetGame() {
@@ -103,7 +93,6 @@ function createRandomArrayFromOther(arrayToCopy, maxLength = 8) {
     const randomItem = clonedArray[randomIndex];
     randomArray.push(randomItem);
     clonedArray.splice(randomIndex, 1);
-    // console.log(randomArray[i].emoji);
   }
   return randomArray;
 }
@@ -142,19 +131,12 @@ function finishGame() {
 function saveScore() {
   const newUser = { name: user, score: scoreCounter, time: totalTime };
   scoreBoard.push(newUser);
-  const scoreBoardSorted = sortScore();
-  console.log("scoreBoardSorted: ", scoreBoardSorted);
-  console.log(
-    "scoreBoardSorted, intentos del último objeto del array: ",
-    scoreBoardSorted[scoreBoardSorted.length - 1].score
-  );
-  console.log("longitud del scoreBoard: ", scoreBoardSorted.length);
+  const scoreBoardSorted = sortScore(); 
+   
   if (scoreBoardSorted.length > 5) {
-    console.log("entró");
     scoreBoard.pop();
     window.localStorage.setItem("scoreBoard", JSON.stringify(scoreBoard));
   } else {
-    console.log("No entró");
     window.localStorage.setItem("scoreBoard", JSON.stringify(scoreBoard));
   }
 }
@@ -164,7 +146,6 @@ function sortScore() {
     // return a.score - b.score;
     return a.score > b.score ? 1 : -1;
   });
-  console.log("ScoreBoard salido de la función sortScore()", scoreBoard);
   return scoreBoard;
 }
 
