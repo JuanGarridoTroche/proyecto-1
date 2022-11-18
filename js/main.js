@@ -15,6 +15,9 @@ const finishDisplay = document.querySelector(".finish-display");
 const alta = document.querySelector("#alta");
 const recogerDatoUser = document.getElementById("user");
 const submitDatoUser = document.getElementById("submit");
+const showGame = document.querySelectorAll(".container");
+console.log(showGame);
+
 const flippedCards = [];
 let scoreCounter = 0;
 let totalTime = 0;
@@ -45,6 +48,10 @@ submitDatoUser.addEventListener("click", () => {
   overlay.classList.remove("active");
   popup.classList.remove("active");
   checkUser();
+  for(let i = 0; i < showGame.length; i++) {
+    showGame[i].classList.add("active");
+  }
+  console.log(showGame);
 });
 
 function checkUser() {

@@ -14,6 +14,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 
@@ -26,24 +27,22 @@
   color: var(--color-yellow);
   font-family: var(--font-p2p);
   font-size: .5rem;
-  padding: 8px 0;
+  padding: 0;
   background: linear-gradient(to left, var(--color-mint), var(--color-navy));
   opacity: .7;
+  height: 40px;
 }
 
 .header-container>h1 {
   text-align: center;
   font-size: .5rem;
   text-transform: uppercase;
-  padding: 0 0 5px 0;
 }
 
 .header-container>.navbar>ul {
   display: flex;
   list-style: none;
 }
-
-
 
 .header-container > .navbar > ul > li > a {
   padding: 5px;
@@ -63,7 +62,8 @@
 
 
 /*? =============== MAIN - Start =============== */
-main {
+
+main {  
   min-height: 100vh;
   font-family: var(--font-p2p);
   background: linear-gradient(to left, var(--color-mint), var(--color-navy));
@@ -78,26 +78,30 @@ section {
   max-width: 500px;
   margin: 0 auto;
   position: relative;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5),
+    0 4px 6px -4px rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+}
+.container.active {
+  visibility: visible;
 }
 
 .score-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1rem;
   border: 3px solid #eee;
   border-radius: 5px;
   align-items: center;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -4px rgba(0, 0, 0, 0.1);
 }
+
 
 .start-btn {
   background-color: var(--color-red);
   color: #eee;
   border-radius: 5px;
   padding: .5rem;
-  margin-bottom: 10px;
+  margin: 10px 0;
   border: 0;
   cursor: pointer;
   font-family: var(--font-p2p);
@@ -118,6 +122,10 @@ section {
   color: var(--color-yellow);
 }
 
+.score-board__item:last-child {
+  padding-bottom: 10px;
+}
+
 .score-board__item {
   display: flex;
   justify-content: space-between;
@@ -128,7 +136,7 @@ section {
   display: grid;
   grid-template-columns: repeat(4, auto);
   gap: .5rem;
-  padding: 1rem .5rem;
+  padding: .5rem .5rem;
   border: 2px solid #eee;
   border-radius: 5px;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
@@ -433,6 +441,8 @@ section {
 
 /* =============== Responsive Desktop - Start =============== */
 @media(min-width: 500px) {
+
+
   .header-container {
     display: flex;
     flex-direction: row;
@@ -460,7 +470,7 @@ section {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 1rem;
+    padding: .5rem 1rem;
     border: 3px solid #eee;
     border-radius: 5px;
   }
@@ -512,8 +522,9 @@ section {
 
   .board {
     display: grid;
+    justify-content: center;
     grid-template-columns: repeat(4, auto);
-    gap: .3rem;
+    gap: .5rem;
     padding: 1rem;
     border: 2px solid #eee;
     border-radius: 5px;
@@ -521,11 +532,7 @@ section {
       0 4px 6px -4px rgba(0, 0, 0, 0.1);
     position: relative;
     min-height: 300px;
-  }
-
-  .board {
-    justify-content: center;
-  }
+  }  
 
 }
 
