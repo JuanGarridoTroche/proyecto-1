@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="./img/favicongame.png" id="favicon">
   <link rel="stylesheet" href="./css/puntuacion.css"/>
   <title>Memoria visual Project</title>
 </head>
@@ -32,17 +33,22 @@
           <th>Tiempo</th>
         </tr>
       </table>
-    </main>   
-    <!-- <section id="IntentosTop5">
-      <p>Usuario Intentos</p>
-      <ol class="listado intentos"></ol>
-    </section>
-    <section id="tiempoTop5">
-      <p>Usuario tiempo</p>
-      <ol class="listado tiempo"></ol>
-    </section> -->
-  </main>
+    </main>  
+  <div class="overlay" id="overlay">
+    <div class="popup" id="popup">
+      <a href="#" class="btn-close-popup" id="btn-close-popup"><i class="fa-solid fa-x"></i></a>
+      <h3>INGRESA TU NOMBRE DE USUARIO</h3>
+      <h4>y juega al juego de memoria visual:</h4>
+      <form>
+        <div class="container-inputs">
+          <input type="text" placeholder="jugador" name="user">
+        </div>
+        <button type="submit" class="btn-submit" onclick="userName()">Registrar</button>
+      </form>
+    </div>
+  </div>
   <script type="module" src="./js/puntuacion.js"></script>    
+  <script type="module" src="./js/main.js"></script> 
 </body>
 
 </html>

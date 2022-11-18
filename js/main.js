@@ -3,14 +3,18 @@ import { emojiFoods } from "./emoji-foods.js";
 import { shuffleArray } from "./shuffleArray.js";
 
 const startBtn = document.querySelector(".start-btn");
+const overlay = document.getElementById("overlay");
+const popup = document.getElementById("popup");
+const btnClosePopup = document.getElementById("btn-close-popup");
+
 const template = document.querySelector("#template-card");
 const board = document.querySelector(".board");
 const scoreItem = document.querySelector(".score-board__item-score");
 const timer = document.querySelector(".score-board__item-time");
 const finishDisplay = document.querySelector(".finish-display");
 const alta = document.querySelector("#alta");
-
-
+const recogerDatoUser = document.getElementById("user");
+const submitDatoUser = document.getElementById("submit");
 const flippedCards = [];
 let scoreCounter = 0;
 let totalTime = 0;
@@ -20,7 +24,10 @@ let user = "Date de alta";
 const fragment = document.createDocumentFragment();
 
 alta.addEventListener("click", () => {
-  checkUser();
+  overlay.classList.add("active");
+  popup.classList.add("active");
+  // user = document.getElementById("user").value;
+  console.log(user);
 });
 
 startBtn.addEventListener("click", () => {
@@ -32,12 +39,38 @@ startBtn.addEventListener("click", () => {
   timeInterval = setInterval(updateTime, 1000);
 });
 
+submitDatoUser.addEventListener("click", () => {
+  user = recogerDatoUser.value;
+  console.log(user);
+  overlay.classList.remove("active");
+  popup.classList.remove("active");
+  checkUser();
+});
+
 function checkUser() {
-  user = prompt("Introduce un nombre de usuario: ");
+  // user = prompt("Introduce un nombre de usuario: ");
+  console.log(user);
   alta.innerHTML = `<a>${user}</a>`;
 }
 
+btnClosePopup.addEventListener("click", () => {
+  overlay.classList.remove("active");
+  popup.classList.remove("active");
+});
+
+function probando() {
+  console.log(user);
+  overlay.classList.remove("active");
+  popup.classList.remove("active");
+};
+
 board.addEventListener("click", flipCard);
+
+function userName() {
+  // user = "Date de alta";
+  user = document.getElementById("user").value;
+  console.log(user);
+}
 
 function resetGame() {
   board.innerHTML = "";
@@ -111,24 +144,26 @@ function saveScore() {
   scoreBoard.push(newUser);
   const scoreBoardSorted = sortScore();
   console.log("scoreBoardSorted: ", scoreBoardSorted);
-  console.log("scoreBoardSorted, intentos del último objeto del array: ",scoreBoardSorted[scoreBoardSorted.length-1].score);
+  console.log(
+    "scoreBoardSorted, intentos del último objeto del array: ",
+    scoreBoardSorted[scoreBoardSorted.length - 1].score
+  );
   console.log("longitud del scoreBoard: ", scoreBoardSorted.length);
-  if(scoreBoardSorted.length > 5) {    
-      console.log("entró");    
-      scoreBoard.pop();
-      window.localStorage.setItem("scoreBoard", JSON.stringify(scoreBoard));    
-  } else {    
+  if (scoreBoardSorted.length > 5) {
+    console.log("entró");
+    scoreBoard.pop();
+    window.localStorage.setItem("scoreBoard", JSON.stringify(scoreBoard));
+  } else {
     console.log("No entró");
     window.localStorage.setItem("scoreBoard", JSON.stringify(scoreBoard));
   }
 }
 
-
 function sortScore() {
   scoreBoard.sort((a, b) => {
     // return a.score - b.score;
     return a.score > b.score ? 1 : -1;
-  });  
+  });
   console.log("ScoreBoard salido de la función sortScore()", scoreBoard);
   return scoreBoard;
 }
@@ -156,5 +191,9 @@ function updateScoreCounter(score) {
 
 function updateTime() {
   totalTime++;
-  timer.textContent = totalTime;
+  timer.textContent = `${totalTime}s`;
 }
+
+
+
+

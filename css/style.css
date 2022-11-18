@@ -224,7 +224,147 @@ section {
   display: none;
 }
 
-/* =============== MAIN - End =============== */
+/* =============== POPUP - Start ===============  */
+ .overlay {
+  background-color: rgba(0, 0, 0, .3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden; 
+} 
+
+.overlay.active {
+  visibility: visible;
+}
+
+.popup {
+  background-color: #f8f8f8;
+  box-shadow: 0 7px 5px 0 rgba(0, 0, 0, .3);
+  border-radius: 3px;
+  font-family: var(--font-p2p);
+  font-size: .8rem;
+  text-align: center;
+  padding: 20px;
+  width: 600px;
+  transition: .5s ease all; /* todas las propiedades de .popup tendran una transición de 0.3 segundos */
+  transform: scale(.7);
+  opacity: 0;
+
+}
+
+.popup .btn-close-popup {
+  font-size: 1rem;
+  line-height: 10px;
+  display: block;
+  text-align: right;
+  color: #bbbbbb;
+  transition: .3s ease all;
+}
+
+.popup .btn-close-popup:hover {
+  color: black;
+}
+
+.popup > h3  {
+  /* font-size: 3rem; */
+  margin-bottom: 10px;
+  opacity: 0;
+}
+
+.popup > h4  {
+  margin-bottom: 40px;
+  opacity: 0;
+}
+
+.popup form .container-inputs {
+  opacity: 0;
+}
+
+.popup form .container-inputs input {
+  width: 100%;
+  margin-bottom: 20px;
+  height: 52px;
+  font-size: 1.4rem;
+  text-align: center;
+  border:1px solid #bbbbbb;
+}
+
+.popup form .btn-submit {
+  padding: 0 20px;
+  height: 40px;
+  line-height: 40px;
+  border: none;
+  color: white;
+  background-color: var(--color-red);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: .3s ease all;
+}
+
+.popup form .btn-submit:hover {
+  opacity: .8;
+}
+/* =============== POPUP - End =============== */
+
+
+/* =============== ANIMACIÓN POPUP - Start ===============  */
+.popup.active {
+  opacity: 1;
+  transform: scale(1);
+}
+.popup.active h3 {
+  animation: entradaH3Active .8s ease .5s forwards; /* con forwards acaba como la animación final en vez de volver al inicio*/
+}
+
+.popup.active h4 {
+  animation: entradaH4Active .8s ease .5s forwards; /* con forwards acaba como la animación final en vez de volver al inicio*/
+}
+
+.popup.active .container-inputs {
+  animation: entradaInputs .8s ease .8s forwards; /* con forwards acaba como la animación final en vez de volver al inicio*/
+}
+
+@keyframes entradaH3Active {
+  from {
+    transform: translateY(-25px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes entradaH4Active {
+  from {
+    transform: translateY(25px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes entradaInputs {
+  from {
+    transform: translateY(25px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* =============== ANIMACIÓN POPUP - End =============== */
 
 
 /* =============== Animación cartas - Start =============== */
