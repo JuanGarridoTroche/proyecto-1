@@ -1,24 +1,35 @@
 @import url(./style.css);
 
-* {
-  margin: inherit;
-  padding: inherit;
-  box-sizing: inherit;
+
+.header-container {
+  height: 50px;
+}
+
+.header-container h1 {
+  padding: 10px 0;  
+}
+
+.header-container .navbar > ul >li > a {
+  padding: 5px;
+  margin: 5px;
+  line-height: 20px;
 }
 
 main > header > h2 {
   text-align: center;
   padding: 30px 0;
-  color: var(--color-yellow);
+  color: var(--color-yellow);   
 } 
 
 table {
-  padding:20px;
+  padding:10px;
   margin: 0 auto;
 }
 
 table tr th {
   color: var(--color-yellow);
+  font-size: .6rem;
+  padding: 7px;
 }
 
 table tr {
@@ -28,6 +39,7 @@ table tr {
 }
 
 table tr > td {
-  padding: 5px;
+  padding: 4px;
   color: var(--color-navy);
+  font-size: .5rem;
 }
