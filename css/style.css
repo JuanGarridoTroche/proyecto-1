@@ -391,7 +391,7 @@ section {
   }
 }
 
-/* Al pulsar el botón "comenzar" le damos una animación cuando crea el tablero con las cartas */
+/* Al pulsar el botón "Start" le damos una animación cuando crea el tablero con las cartas */
 @keyframes bounce-in-fwd {
   0% {
     transform: scale(0);
@@ -442,6 +442,9 @@ section {
 /* =============== Responsive Desktop - Start =============== */
 @media(min-width: 500px) {
 
+  section {
+    padding: 10px;
+  }
 
   .header-container {
     display: flex;

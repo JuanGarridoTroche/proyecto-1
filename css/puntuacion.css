@@ -47,6 +47,11 @@ table tr > td {
 
 /** RESPONSIVE */
 @media(min-width: 500px) {
+  .header-container {
+    margin: 0;
+    padding: 0;
+  }
+
   .header-container h1 {
     padding: 20px 0;  
     font-size: .7rem;

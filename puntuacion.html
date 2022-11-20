@@ -34,19 +34,19 @@
         </tr>
       </table>
     </main>  
-  <div class="overlay" id="overlay">
-    <div class="popup" id="popup">
-      <a href="#" class="btn-close-popup" id="btn-close-popup"><i class="fa-solid fa-x"></i></a>
-      <h3>INGRESA TU NOMBRE DE USUARIO</h3>
-      <h4>y juega al juego de memoria visual:</h4>
-      <form>
-        <div class="container-inputs">
-          <input type="text" placeholder="jugador" name="user">
-        </div>
-        <button type="submit" class="btn-submit" onclick="userName()">Registrar</button>
-      </form>
+    <div class="overlay" id="overlay">
+      <div class="popup" id="popup">
+        <a href="#" class="btn-close-popup" id="btn-close-popup"><i class="fa-solid fa-x"></i></a>
+        <h3>INGRESA TU NOMBRE DE USUARIO</h3>
+        <h4>y juega al juego de memoria visual:</h4>
+        <form id="formulario">
+          <div class="container-inputs">
+            <input type="text" placeholder="jugador" name="user" id="user">
+          </div>
+          <input type="button" value="Aceptar" id="submit" class="btn-submit">
+        </form>
+      </div>
     </div>
-  </div>
   <script type="module" src="./js/puntuacion.js"></script>    
   <script type="module" src="./js/main.js"></script> 
 </body>

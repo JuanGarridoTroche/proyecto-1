@@ -6,6 +6,7 @@ const startBtn = document.querySelector(".start-btn");
 const overlay = document.getElementById("overlay");
 const popup = document.getElementById("popup");
 const btnClosePopup = document.getElementById("btn-close-popup");
+const h4 = document.querySelector(".overlay .popup h4");
 
 const template = document.querySelector("#template-card");
 const board = document.querySelector(".board");
@@ -16,7 +17,7 @@ const alta = document.querySelector("#alta");
 const recogerDatoUser = document.getElementById("user");
 const submitDatoUser = document.getElementById("submit");
 const showGame = document.querySelectorAll(".container");
-console.log(showGame);
+// console.log(showGame);
 
 const flippedCards = [];
 let scoreCounter = 0;
@@ -27,6 +28,8 @@ let user = "Date de alta";
 const fragment = document.createDocumentFragment();
 
 alta.addEventListener("click", () => {
+  h4.textContent = "y juega al juego de memoria visual:";
+    h4.style.color = "black";
   overlay.classList.add("active");
   popup.classList.add("active");  
 });
@@ -44,14 +47,23 @@ startBtn.addEventListener("click", () => {
 });
 
 submitDatoUser.addEventListener("click", () => {
-  user = recogerDatoUser.value;
-  overlay.classList.remove("active");
-  popup.classList.remove("active");
-  checkUser();
-  for(let i = 0; i < showGame.length; i++) {
-    showGame[i].classList.add("active");
-  }
-  console.log(showGame);
+  try {
+    user = recogerDatoUser.value;
+    if(!user || user === "" || user.length < 3) {
+      throw new SyntaxError("Por favor, introduce un nombre de usuario válido con al menos 3 caracteres.")
+    }
+    overlay.classList.remove("active");
+    popup.classList.remove("active");    
+    checkUser();
+    for(let i = 0; i < showGame.length; i++) {
+      showGame[i].classList.add("active");
+    }
+  } catch(error) {
+    h4.textContent = error.message;
+    h4.style.color = "red";
+    console.error("Nombre de usuario no válido: ", error);
+  };
+  // console.log(showGame);
 });
 
 function checkUser() {
