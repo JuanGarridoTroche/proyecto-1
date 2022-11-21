@@ -16,3 +16,4 @@ scoreBoardLS.sort((a, b) => {
 for (let i = 0; i < scoreBoardLS.length; i++) {
   listadoIntentos.innerHTML += `<tr><td>${scoreBoardLS[i].name}</td><td>${scoreBoardLS[i].score}</td><td>${scoreBoardLS[i].time}</td></tr>`;
 }
+

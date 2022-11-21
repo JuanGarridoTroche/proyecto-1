@@ -2,16 +2,20 @@
 
 
 .header-container {
-  height: 50px;
+  height: 70px;
 }
 
 .header-container h1 {
-  padding: 10px 0;  
+  padding: 5px 0;  
+}
+
+.header-container .navbar > ul >li {
+  padding: 0 5px;
 }
 
 .header-container .navbar > ul >li > a {
   padding: 5px;
-  margin: 5px;
+  margin: 5px 0;
   line-height: 20px;
 }
 
@@ -46,25 +50,25 @@ table tr > td {
 
 
 /** RESPONSIVE */
-@media(min-width: 500px) {
+@media(min-width: 570px) {
   .header-container {
     margin: 0;
     padding: 0;
   }
 
   .header-container h1 {
-    padding: 20px 0;  
+    padding: 15px 0;  
     font-size: .7rem;
   }
 
   table tr th {
     font-size: 1.2rem;
-    padding: 10px;
+    padding: 30px;
   }
 
   table tr > td {
     padding: 10px;
-    font-size: 1rem;
+    font-size: 1.2rem;
     text-shadow: 0 1px 3px var(--color-yellow);
   }
 }

@@ -3,10 +3,13 @@ import { emojiFoods } from "./emoji-foods.js";
 import { shuffleArray } from "./shuffleArray.js";
 
 const startBtn = document.querySelector(".start-btn");
+const start = document.getElementById("start");
 const overlay = document.getElementById("overlay");
 const popup = document.getElementById("popup");
 const btnClosePopup = document.getElementById("btn-close-popup");
 const h4 = document.querySelector(".overlay .popup h4");
+const score = document.getElementById("score");
+const main = document.querySelector("main");
 
 const template = document.querySelector("#template-card");
 const board = document.querySelector(".board");
@@ -27,44 +30,70 @@ let user = "Date de alta";
 
 const fragment = document.createDocumentFragment();
 
+
+//Botón del menú: "Date de alta"
 alta.addEventListener("click", () => {
   h4.textContent = "y juega al juego de memoria visual:";
-    h4.style.color = "black";
+  h4.style.color = "black";
   overlay.classList.add("active");
-  popup.classList.add("active");  
+  popup.classList.add("active");
 });
 
+
+//Botón de inicio de scoreBoard
 startBtn.addEventListener("click", () => {
+  // console.log(main);
+  startGame();
+});
+
+
+//Botón del menú: Inicio
+start.addEventListener("click", ()=> {  
+  startBtn.textContent = "Start";
   if (user === "Date de alta") {
     overlay.classList.add("active");
     popup.classList.add("active");
-    startBtn.textContent = "Start";    
-  } else {
+  } else { 
+    resetGame();
+  }
+});
+
+
+//Botón registrar usuario
+submitDatoUser.addEventListener("click", () => {
+  try {
+    user = recogerDatoUser.value;
+    if (!user || user === "" || user.length < 3) {
+      throw new SyntaxError(
+        "Por favor, introduce un nombre de usuario válido con al menos 3 caracteres."
+      );
+    }
+    overlay.classList.remove("active");
+    popup.classList.remove("active");
+    checkUser();
+    for (let i = 0; i < showGame.length; i++) {
+      showGame[i].classList.add("active");
+    }
+  } catch (error) {
+    h4.textContent = error.message;
+    h4.style.color = "red";
+    console.error("Nombre de usuario no válido: ", error);
+  }
+  // console.log(showGame);
+});
+
+
+function startGame() {
+  startBtn.textContent = "Start";
+  if (user === "Date de alta") {
+    overlay.classList.add("active");
+    popup.classList.add("active");
+  } else { 
     resetGame();
     createBoard();
     timeInterval = setInterval(updateTime, 1000);
   }
-});
-
-submitDatoUser.addEventListener("click", () => {
-  try {
-    user = recogerDatoUser.value;
-    if(!user || user === "" || user.length < 3) {
-      throw new SyntaxError("Por favor, introduce un nombre de usuario válido con al menos 3 caracteres.")
-    }
-    overlay.classList.remove("active");
-    popup.classList.remove("active");    
-    checkUser();
-    for(let i = 0; i < showGame.length; i++) {
-      showGame[i].classList.add("active");
-    }
-  } catch(error) {
-    h4.textContent = error.message;
-    h4.style.color = "red";
-    console.error("Nombre de usuario no válido: ", error);
-  };
-  // console.log(showGame);
-});
+}
 
 function checkUser() {
   alta.innerHTML = `<a>${user}</a>`;
@@ -89,6 +118,7 @@ function resetGame() {
   scoreCounter = 0;
   scoreItem.textContent = scoreCounter;
   finishDisplay.classList.add("hide");
+
 }
 
 function createBoard() {
@@ -150,8 +180,8 @@ function finishGame() {
 function saveScore() {
   const newUser = { name: user, score: scoreCounter, time: totalTime };
   scoreBoard.push(newUser);
-  const scoreBoardSorted = sortScore(); 
-   
+  const scoreBoardSorted = sortScore();
+
   if (scoreBoardSorted.length > 5) {
     scoreBoard.pop();
     window.localStorage.setItem("scoreBoard", JSON.stringify(scoreBoard));
@@ -194,6 +224,22 @@ function updateTime() {
   timer.textContent = `${totalTime}s`;
 }
 
+score.addEventListener("click", () => {
+  // console.log("Puntuación");
+  puntuacionHtml();
+  const listadoIntentos = document.querySelector(".intentos");
+  // console.log(listado);
 
+  localStorage.setItem("scoreboard", JSON.stringify(scoreBoard));
 
+  //Retrieve the scoreboard and parse so it becomes an array of objects again
+  let scoreBoardLS = JSON.parse(localStorage.getItem("scoreboard"));
 
+  //Mostramos los usuarios ordenados por intentos:
+  scoreBoardLS.sort((a, b) => {
+    return a.score - b.score;
+  });
+  for (let i = 0; i < scoreBoardLS.length; i++) {
+    listadoIntentos.innerHTML += `<tr><td>${scoreBoardLS[i].name}</td><td>${scoreBoardLS[i].score}</td><td>${scoreBoardLS[i].time}</td></tr>`;
+  }
+});
