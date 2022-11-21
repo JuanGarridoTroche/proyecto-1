@@ -69,8 +69,23 @@
         <input type="button" value="Aceptar" id="submit" class="btn-submit">
       </form>
     </div>
-  </div>  
+  </div>
+  <div class="style-switcher">
+    <div class="style-switcher-toggler s-icon">
+      <i class="fas fa-cog fa-spin"></i>
+    </div>
+    <div class="day-night s-icon"><i class="fas fa-sun"></i></div>
+    <h4>Paleta de colores</h4>
+    <div class="colors">
+      <span class="color-1" onclick="fijarEstiloActivo('color-1')"></span>
+      <span class="color-2" onclick="fijarEstiloActivo('color-2')"></span>
+      <span class="color-3" onclick="fijarEstiloActivo('color-3')"></span>
+      <span class="color-4" onclick="fijarEstiloActivo('color-4')"></span>
+      <span class="color-5" onclick="fijarEstiloActivo('color-5')"></span>
+    </div>
+  </div>
   <script src="./js/main.js" type="module"></script>
+  <script src="./js/style-switcher.js"></script>
 </body>
 
 </html>

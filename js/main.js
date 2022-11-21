@@ -9,7 +9,6 @@ const popup = document.getElementById("popup");
 const btnClosePopup = document.getElementById("btn-close-popup");
 const h4 = document.querySelector(".overlay .popup h4");
 const score = document.getElementById("score");
-const main = document.querySelector("main");
 
 const template = document.querySelector("#template-card");
 const board = document.querySelector(".board");
@@ -42,7 +41,6 @@ alta.addEventListener("click", () => {
 
 //Botón de inicio de scoreBoard
 startBtn.addEventListener("click", () => {
-  // console.log(main);
   startGame();
 });
 
@@ -243,3 +241,4 @@ score.addEventListener("click", () => {
     listadoIntentos.innerHTML += `<tr><td>${scoreBoardLS[i].name}</td><td>${scoreBoardLS[i].score}</td><td>${scoreBoardLS[i].time}</td></tr>`;
   }
 });
+

@@ -2,7 +2,6 @@ import scoreBoard from "./localStorage.js";
 
 // console.log(scoreBoard);
 const listadoIntentos = document.querySelector(".intentos");
-// console.log(listado);
 
 localStorage.setItem("scoreboard", JSON.stringify(scoreBoard));
 

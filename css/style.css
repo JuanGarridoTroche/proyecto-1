@@ -300,9 +300,10 @@ section {
   font-size: 1.4rem;
   text-align: center;
   border:1px solid #bbbbbb;
+  font-family: var(--font-p2p);
 }
 
-.popup form .btn-submit {
+.popup #formulario .btn-submit {
   padding: 0 20px;
   height: 40px;
   line-height: 40px;
@@ -312,6 +313,7 @@ section {
   border-radius: 3px;
   cursor: pointer;
   transition: .3s ease all;
+  font-family: var(--font-p2p);
 }
 
 .popup form .btn-submit:hover {
