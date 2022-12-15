@@ -44,7 +44,7 @@
   list-style: none;
 }
 
-.header-container > .navbar > ul > li > a {
+.header-container>.navbar>ul>li>a {
   padding: 5px;
   margin: 0 5px;
   text-decoration: none;
@@ -63,7 +63,7 @@
 
 /*? =============== MAIN - Start =============== */
 
-main {  
+main {
   min-height: 100vh;
   font-family: var(--font-p2p);
   background: linear-gradient(to left, var(--color-mint), var(--color-navy));
@@ -82,6 +82,7 @@ section {
     0 4px 6px -4px rgba(0, 0, 0, 0.5);
   visibility: hidden;
 }
+
 .container.active {
   visibility: visible;
 }
@@ -168,7 +169,7 @@ section {
   background-color: var(--color-back-card);
   ;
   /*background: linear-gradient(to right, #FEDB39, #50c9c3); */
-   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   backface-visibility: hidden;
 }
 
@@ -177,7 +178,6 @@ section {
   place-items: center;
   font-size: 2rem;
   text-align: center;
-  line-height: 100px;
   background: var(--color-mint);
   transform: rotateY(180deg) rotateZ(50deg);
   user-select: none;
@@ -233,7 +233,7 @@ section {
 }
 
 /* =============== POPUP - Start ===============  */
- .overlay {
+.overlay {
   background-color: rgba(0, 0, 0, .3);
   position: fixed;
   top: 0;
@@ -243,8 +243,8 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  visibility: hidden; 
-} 
+  visibility: hidden;
+}
 
 .overlay.active {
   visibility: visible;
@@ -259,7 +259,8 @@ section {
   text-align: center;
   padding: 20px;
   width: 600px;
-  transition: .5s ease all; /* todas las propiedades de .popup tendran una transición de 0.3 segundos */
+  transition: .5s ease all;
+  /* todas las propiedades de .popup tendran una transición de x segundos */
   transform: scale(.7);
   opacity: 0;
 
@@ -278,13 +279,13 @@ section {
   color: black;
 }
 
-.popup > h3  {
+.popup>h3 {
   /* font-size: 3rem; */
   margin-bottom: 10px;
   opacity: 0;
 }
 
-.popup > h4  {
+.popup>h4 {
   margin-bottom: 40px;
   opacity: 0;
 }
@@ -299,7 +300,7 @@ section {
   height: 52px;
   font-size: 1.4rem;
   text-align: center;
-  border:1px solid #bbbbbb;
+  border: 1px solid #bbbbbb;
   font-family: var(--font-p2p);
 }
 
@@ -319,6 +320,7 @@ section {
 .popup form .btn-submit:hover {
   opacity: .8;
 }
+
 /* =============== POPUP - End =============== */
 
 
@@ -327,16 +329,20 @@ section {
   opacity: 1;
   transform: scale(1);
 }
+
 .popup.active h3 {
-  animation: entradaH3Active .8s ease .5s forwards; /* con forwards acaba como la animación final en vez de volver al inicio*/
+  animation: entradaH3Active .8s ease .5s forwards;
+  /* con forwards acaba como la animación final en vez de volver al inicio*/
 }
 
 .popup.active h4 {
-  animation: entradaH4Active .8s ease .5s forwards; /* con forwards acaba como la animación final en vez de volver al inicio*/
+  animation: entradaH4Active .8s ease .5s forwards;
+  /* con forwards acaba como la animación final en vez de volver al inicio*/
 }
 
 .popup.active .container-inputs {
-  animation: entradaInputs .8s ease .8s forwards; /* con forwards acaba como la animación final en vez de volver al inicio*/
+  animation: entradaInputs .8s ease .8s forwards;
+  /* con forwards acaba como la animación final en vez de volver al inicio*/
 }
 
 @keyframes entradaH3Active {
@@ -374,6 +380,7 @@ section {
     opacity: 1;
   }
 }
+
 /* =============== ANIMACIÓN POPUP - End =============== */
 
 
@@ -537,7 +544,7 @@ section {
       0 4px 6px -4px rgba(0, 0, 0, 0.1);
     position: relative;
     min-height: 300px;
-  }  
+  }
 
 }
 
